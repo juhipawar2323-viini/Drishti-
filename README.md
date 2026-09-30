@@ -43,49 +43,47 @@ This project was successfully built by our dedicated team:
 Drishti AI relies on a decoupled Client-Server architecture utilizing a modern stack (React, Node.js, Express, Supabase).
 
 ### Architecture Flow Diagram
-```plantuml
-@startuml
-!theme plain
-skinparam componentStyle uml2
+```mermaid
+graph TD
+    User((Visually Impaired User))
 
-actor "Visually Impaired User" as User
+    subgraph Frontend [Frontend - Vercel]
+        ReactUI[React UI / Vite]
+        Camera[Camera Controls]
+        AudioService[Web Speech API]
+        APIClient[API Client]
+    end
 
-package "Frontend (Vercel)" {
-  [React UI / Vite] as ReactUI
-  [Camera Controls] as Camera
-  [Web Speech API] as AudioService
-  [API Client] as APIClient
-}
+    subgraph Backend [Backend - Render]
+        Express[Express Server]
+        Controllers[Auth & Scan Controllers]
+        AIService[AI Service Controller]
+    end
 
-package "Backend (Render)" {
-  [Express Server] as Express
-  [AI Service Controller] as AIService
-  [Auth & Scan Controllers] as Controllers
-}
+    subgraph External [External Services]
+        Gemini[Google Gemini API]
+        subgraph Supabase [Supabase]
+            DB[(PostgreSQL Database)]
+            Storage[Storage Bucket]
+        end
+    end
 
-cloud "External Services" {
-  [Google Gemini API] as Gemini
-  database "Supabase" {
-    [PostgreSQL Database] as DB
-    [Storage Bucket] as Storage
-  }
-}
-
-User <--> ReactUI : Voice Commands / Screen Reader
-User --> Camera : Capture Image
-ReactUI <--> AudioService : Speak / Listen
-Camera --> APIClient : Image Blob
-APIClient --> Express : HTTPS (REST API)
-Express --> Controllers : Validated Request
-Controllers --> AIService : Process Image
-Controllers --> DB : Store Metadata
-Controllers --> Storage : Upload Image
-AIService --> Gemini : Generate Content
-Gemini --> AIService : AI JSON Response
-AIService --> Express : Formatted Analysis
-Express --> APIClient : JSON Response
-APIClient --> AudioService : Audio Narrative
-@enduml
+    User <-->|Voice Commands / Screen Reader| ReactUI
+    User -->|Capture Image| Camera
+    ReactUI <-->|Speak / Listen| AudioService
+    Camera -->|Image Blob| APIClient
+    
+    APIClient -->|HTTPS REST API| Express
+    Express -->|Validated Request| Controllers
+    Controllers -->|Process Image| AIService
+    Controllers -->|Store Metadata| DB
+    Controllers -->|Upload Image| Storage
+    
+    AIService -->|Generate Content| Gemini
+    Gemini -->|AI JSON Response| AIService
+    AIService -->|Formatted Analysis| Express
+    Express -->|JSON Response| APIClient
+    APIClient -->|Audio Narrative| AudioService
 ```
 
 ### Core Technologies:
