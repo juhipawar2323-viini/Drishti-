@@ -4,7 +4,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || (window.location.hostname =
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 45000,
+  timeout: 100000, // Increased to 100s to survive Render free-tier cold starts
 });
 
 // Interceptor to attach stored JWT token
