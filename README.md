@@ -27,12 +27,12 @@ Visually impaired individuals face significant daily challenges in navigating th
 ## 👥 The Team
 This project was successfully built by our dedicated team:
 
-- **Team Leader**: JUHI
+- **Team Leader**: JUHI PAWAR
 - **Team Members**: 
-  - LAKSHYA
-  - HIMANSHU
-  - ANIRBAN
-  - TYEJAS
+  - LAKSHYA SAXENA.
+  - HIMANSHU YADAV.
+  - ANIRBAN BHOWMIK.
+  - TEJAS KHARE.
 
 **Date & Time of Completion**: September 30, 2026, 16:55 IST
 
