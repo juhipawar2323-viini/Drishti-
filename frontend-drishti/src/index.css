@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Accessible Focus Outlines */
+:focus-visible {
+  outline: 3px solid #facc15 !important;
+  outline-offset: 3px !important;
+}
+
+/* High Contrast Yellow-on-Black Accessibility Theme */
+.high-contrast {
+  --tw-bg-opacity: 1 !important;
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+.high-contrast * {
+  border-color: #ffff00 !important;
+}
+
+.high-contrast button {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+.high-contrast button:hover,
+.high-contrast button:focus {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
+
+.high-contrast .bg-slate-900,
+.high-contrast .bg-slate-950,
+.high-contrast .bg-slate-800,
+.high-contrast .bg-white {
+  background-color: #000000 !important;
+}
+
+.high-contrast .text-slate-400,
+.high-contrast .text-slate-300,
+.high-contrast .text-slate-500,
+.high-contrast .text-slate-600 {
+  color: #ffffff !important;
+}
+
+/* Pulsing radar scan effect for active camera view */
+@keyframes radar-sweep {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(1000%); opacity: 0; }
+}
+
+.animate-radar {
+  animation: radar-sweep 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
