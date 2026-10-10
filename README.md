@@ -15,7 +15,7 @@ Visually impaired individuals face significant daily challenges in navigating th
 - **Find Objects**: Scan a room for specific items like keys, phones, or doors, receiving precise directional guidance (e.g., "Keys detected at 3 o'clock").
 - **Voice Navigation**: Entirely navigable via voice commands like "Take a picture", "Read medicine", "Currency mode", etc.
 - 
-## The Demo of the Project
+## 👉 How to work with DRISHTI
 <a href="https://www.youtube.com/watch?v=ebt1lSWrm2k">
   <img src="https://img.youtube.com/vi/ebt1lSWrm2k/maxresdefault.jpg" alt="Project Demo" width="700">
 </a>
