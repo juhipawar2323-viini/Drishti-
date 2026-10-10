@@ -14,6 +14,13 @@ Visually impaired individuals face significant daily challenges in navigating th
 - **Identify Currency**: Accurately recognize and calculate the total value of Indian Rupees (INR) and international currency.
 - **Find Objects**: Scan a room for specific items like keys, phones, or doors, receiving precise directional guidance (e.g., "Keys detected at 3 o'clock").
 - **Voice Navigation**: Entirely navigable via voice commands like "Take a picture", "Read medicine", "Currency mode", etc.
+- 
+## The Demo of the Project
+<a href="https://www.youtube.com/watch?v=ebt1lSWrm2k">
+  <img src="https://img.youtube.com/vi/ebt1lSWrm2k/maxresdefault.jpg" alt="Project Demo" width="700">
+</a>
+
+
 
 ---
 
